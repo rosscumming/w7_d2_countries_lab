@@ -17,7 +17,8 @@
 
       <div v-if='selectedCountry'>
         <h2>Your selection is:</h2>
-        <span> {{ selectedCountry.name }}</span>
+        <span> {{ selectedCountry.name }}</span><br>
+   <img :src="selectedCountry.flag">
       </div>
     </form>
   </div>
