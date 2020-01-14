@@ -17,13 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => this.countries = data)
       },
-
-
-
-      // .then(response => response.json()) //return object from JSON
-      // .then(data => this.dogImgURL = data.message)
-      // .catch(error => console.log("error logging", error))
-
     }
   })
 
