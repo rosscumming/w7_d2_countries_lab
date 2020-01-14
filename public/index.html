@@ -9,12 +9,16 @@
 <body>
   <div id="app">
     <h1>Select a country</h1>
-    <form v-on:submit.prevent="fetchCountry">
-      <select id="select">
-        <option disabled selected>Please choose a country</option>
-        <option v-for="country in countries"> {{ country.name }} </option>
+    <form>
+      <select id="select" v-model="selectedCountry">
+        <option disabled selected :value="null">Please choose a country</option>
+        <option v-for="country in countries" v-bind:value="country"> {{ country.name }} </option>
       </select>
-      <input type="submit" value="Submit">
+
+      <div v-if='selectedCountry'>
+        <h2>Your selection is:</h2>
+        <span> {{ selectedCountry.name }}</span>
+      </div>
     </form>
   </div>
 </body>
