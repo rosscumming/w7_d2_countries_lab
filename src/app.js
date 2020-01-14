@@ -4,12 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el: '#app',
     data: {
-      countryName: "",
-      countryFlag: null
+      countries: [],
+      countryFlags: null
+    },
+    mounted(){
+      this.fetchCountry()
     },
     methods: {
       fetchCountry: function () {
-        fetch()
+        fetch("https://restcountries.eu/rest/v2/all")
+        .then(response => response.json())
+        .then(data => this.countries = data)
+
+
+        // .then(response => response.json()) //return object from JSON
+        // .then(data => this.dogImgURL = data.message)
+        // .catch(error => console.log("error logging", error))
+
+
+
       }
     }
   })
